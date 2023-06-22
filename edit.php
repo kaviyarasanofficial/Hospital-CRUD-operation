@@ -14,7 +14,7 @@ while($row=mysqli_fetch_array($run))
 {
     
     $name = $row['name'];
-    $address = $row['address'];
+    $email = $row['email'];
     $mobile = $row['mobile'];
 
 }
@@ -31,10 +31,10 @@ while($row=mysqli_fetch_array($run))
         {
           $edit = $_GET['edit'];  
           $name = $_POST['name'];
-          $address = $_POST['address'];
+          $email = $_POST['email'];
           $mobile = $_POST['mobile'];
 
-           $sql = "update student set name= '$name',address= '$address',mobile='$mobile' where name =  '$edit'";
+           $sql = "update student set name= '$name',email= '$email',mobile='$mobile' where name =  '$edit'";
 
            if(mysqli_query($connection,$sql))
            {
@@ -78,8 +78,8 @@ while($row=mysqli_fetch_array($run))
                         </div>
 
                         <div class="form-group">
-                            <label>Address</label>
-                            <input type="text" name="address" class="form-control"  placeholder="Enter Address" value="<?php echo $address ?>"> 
+                            <label>email</label>
+                            <input type="email" name="email" class="form-control"  placeholder="Enter Address" value="<?php echo $email ?>"> 
                         </div>
 
                         <div class="form-group">
